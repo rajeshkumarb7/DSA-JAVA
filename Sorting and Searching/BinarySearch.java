@@ -9,7 +9,9 @@ public class BinarySearch {
             asc=true;
         }
         while(start<=end){
-                int mid=(start+end)/2;
+                //int mid=(start+end)/2; avoid to use this because Risk of overflow
+                    //ex: start=1253527847 and end=228427382 so start+end give bigger value int can't hold so not use it
+                int mid = start + (end - start) / 2;
                 if(asc){
                 if(arr[mid]<target){
                     start=mid+1;
